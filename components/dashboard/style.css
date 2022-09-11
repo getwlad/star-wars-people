@@ -1,0 +1,141 @@
+.table-info {
+  /* border: 1px solid black; */
+}
+.table-head {
+  width: 100%;
+  display: flex;
+}
+
+.table-head tr td {
+  font-size: 1.2rem;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-body tr td {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-favorite {
+  background-color: transparent;
+  height: 30px;
+  border: none;
+}
+.btn-favorite i {
+  color: yellow;
+  height: 100%;
+}
+.btn-favorite .selected {
+  color: gold;
+  background-color: purple;
+  border-radius: 8px;
+}
+.btn-info {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+}
+.btn-info i {
+  color: aliceblue;
+}
+.full-info {
+  position: fixed;
+  background-color: #353131;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  padding: 10px;
+  display: flex;
+  border: 1px solid purple;
+  border-radius: 7px;
+  box-shadow: inset 0 0 0.5em rgb(218, 34, 235);
+  flex-direction: column;
+  z-index: 2;
+}
+.full-info p {
+  margin: 4px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.btn-close-info {
+  color: red;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-size: 15px;
+}
+.btn-close-info i {
+  width: 40px;
+}
+ul {
+  width: 100%;
+  display: flex;
+}
+li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 4px;
+}
+
+.graficos,
+.tabela,
+.favoritos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px 10px 10px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.favoritos {
+  padding: 10px;
+}
+.subtitle {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.favorites-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1300px) {
+  .home-page {
+    flex-direction: column;
+  }
+  .graficos {
+    flex-direction: column;
+  }
+}
+canvas {
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto 80px;
+}

@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  background-color: #191919;
+  color: #fff;
+}
+
+.root {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8% 1fr 8%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.title {
+  margin-bottom: 10px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer {
+  height: 100px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+}
+.aside h2 {
+  margin-bottom: 30px;
+}
+.login-form {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.ipt-login {
+  padding: 5px;
+  width: 250px;
+  margin: 10px;
+  font-size: 1rem;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #19191901;
+}
+.ipt-login:focus {
+  box-shadow: 0;
+  outline: 0;
+}
+.ipt-login:active {
+  border: none;
+}
+.btn-login {
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #19191901;
+  outline: 0;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+}
+.btn-login:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn-login:active {
+  background-color: #222;
+}
+.cadastrar {
+  border-radius: 10px;
+  background-color: purple;
+  padding: 2px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .login-form,
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-login:hover {
+    background-color: #f0f0f0;
+    color: black;
+  }
+}

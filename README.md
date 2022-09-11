@@ -1,4 +1,4 @@
-# star-wars-people
+# Star Wars People
 ## Sobre o projeto
 [https://getwlad.github.io/star-wars-people/](https://getwlad.github.io/star-wars-people/)  <br/>
 Página SPA desenvolvida sem nenhum framework, baseada em componentização. 

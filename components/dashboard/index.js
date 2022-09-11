@@ -5,7 +5,6 @@ $(async function () {
   };
   //Função pra carregar lista de favoritos
   const favorite = (e, id, first = false) => {
-    const favorites = $(".favorites-list");
     const favExiste = $(`[persId=${id}]`);
     if (favExiste.length > 0) {
       favs = favs.filter((fav) => {
@@ -15,32 +14,41 @@ $(async function () {
         return favId !== id;
       });
       $(`[favid=${id}]`).removeClass("selected");
-      favorites.html(favs.map((fav) => fav));
+
       saveData();
     } else {
       favs.push(
-        `<li persId="${id}"><span>${persons[id].name}</span><a class="remove-fav"> <i class="material-symbols-outlined">delete</i></a></li>`
+        `<li persId="${id}"><span>${persons[id].name}</span><a favId="${id}" class="remove-fav"> <i class="material-symbols-outlined">delete</i></a></li>`
       );
       if (first) {
       } else {
         favIds.push(id);
       }
-
-      favorites.html(favs.map((fav) => fav));
       saveData();
-      $(`[favid=${id}]`).addClass("selected");
-      $(".remove-fav").click((e) => {
+    }
+
+    renderFav();
+  };
+  const renderFav = () => {
+    const favorites = $(".favorites-list");
+    favorites.html(favs.map((fav) => fav));
+    favIds.forEach((favid) => {
+      $(`[favid=${favid}]`).addClass("selected");
+
+      $(`[favId=${favid}]`).click((e) => {
+        const thisId = e.target.parentNode.getAttribute("favid");
         favs = favs.filter((fav) => {
-          return !fav.includes(`persId="${id}"`);
+          return !fav.includes(`persId="${thisId}"`);
         });
+
         favIds = favIds.filter((favId) => {
-          return favId !== id;
+          return favId !== thisId;
         });
         saveData();
-        favorites.html(favs.map((fav) => fav));
-        $(`[favid=${id}]`).removeClass("selected");
+        renderFav(thisId);
+        $(`[favid=${thisId}]`).removeClass("selected");
       });
-    }
+    });
   };
   //Gerar cores aleatórias para os gráficos
   function gerar_cor(opacidade = 1) {
@@ -70,6 +78,7 @@ $(async function () {
       },
     }).then((data) => {
       persons = data.results;
+      $(".img-loads").remove();
     });
     favIds = localStorage.getItem("favorites")
       ? JSON.parse(localStorage.getItem("favorites"))
@@ -81,6 +90,7 @@ $(async function () {
     }
   }
   await obterDados();
+
   //Pega cor da pele e a ano de nascimento e adiciona a cada respectivo array
   persons.forEach((person) => {
     ages.push(person.birth_year);

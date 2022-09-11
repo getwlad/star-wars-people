@@ -2,6 +2,11 @@
 ## Sobre o projeto
 [https://getwlad.github.io/star-wars-people/](https://getwlad.github.io/star-wars-people/)
 
+Usuário padrão
+login: "teste"
+senha: "123"
+sem aspas.
+
 # Tecnologias utilizadas
 - HTML
 - JavaScript
